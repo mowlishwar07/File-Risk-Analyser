@@ -1,7 +1,7 @@
 # 🔍 File Risk Analyzer
 
 A Django-based web application that analyzes uploaded files to detect potential security risks using hash-based matching and heuristic analysis. 
-The system generates unique file hashes, compares them with known malicious signatures, and applies rule-based checks to identify suspicious behavior. 
+The system generates unique file hashes, compares them with known malicious signatures, and applies rule-based checks to identify suspicious files.
 It also stores scan history in MongoDB, enabling efficient tracking and analysis of previously scanned files.
 
 ---
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 ## 🗄️ MongoDB Setup
 
-1. Install MongoDB (Community Edition)
+1. Install MongoDB (Community Edition) with MongoDB Compass
 
 2. Start MongoDB server:
 ```bash
@@ -58,6 +58,13 @@ mongod
 3. Default connection:
 ```
 mongodb://localhost:27017/
+```
+
+---
+
+### 🚀 Load the given hashes in MongoDB
+```bash
+python load_hashes.py
 ```
 
 ---
@@ -79,9 +86,6 @@ The project expects malware hashes stored in MongoDB.
   "hash": "example_hash_here"
 }
 ```
-
-> ⚠️ No dataset is included. You can manually insert sample hashes.  
-> Risk level is calculated dynamically during analysis.
 
 ---
 
